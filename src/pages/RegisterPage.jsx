@@ -7,9 +7,9 @@ const RegisterPage = () => {
                 <div className="logoContainer"> <img src="./logo.svg" alt="" className="logo" /> Sperse</div>
                 <h4 className="registerTitle title">Register</h4>
                 <form className='registerForm form'>
-                    <input placeholder='Display name' className='registerInput input writtenInput' type="text" name="" id="" />
-                    <input placeholder='Email' className='registerInput input writtenInput' type="email" name="" id="" />
-                    <input placeholder='Password' className='registerInput input writtenInput' type="password" name="" id="" />
+                    <input placeholder='Display name' className='registerInput  writtenInput' type="text" name="" id="" />
+                    <input placeholder='Email' className='registerInput  writtenInput' type="email" name="" id="" />
+                    <input placeholder='Password' className='registerInput  writtenInput' type="password" name="" id="" />
                     <label className='avatarLabel' htmlFor="avatar">
                         <img className='userImage' src="./user.svg" alt="" />
                         Add an avatar</label>

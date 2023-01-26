@@ -1,6 +1,18 @@
-const ChatsNavbar = () => {
+const ChatsNavbar = ({ callbackForSiderbarRef }) => {
+
+    const toggleSidebar = (e) => {
+        console.log(e);
+        e.current.classList.toggle('toggleSidebar');
+        // e.current.style.transform = 'translateX(0)'
+    }
+
+    const toggleSidebarButtonFunction = () => {
+        toggleSidebar(callbackForSiderbarRef)
+    }
+
     return (
-        <div className="chatNavbar">
+        <div onClick={toggleSidebarButtonFunction} className="chatNavbar">
+            <div className="showContacts"><img src="/logo.svg" alt="" className="showContactsIcon" /></div>
             <div className="chatInfo">
                 <div className="chatImgContainer">
                     <img src="/user.svg" alt="" className="chatImg" />

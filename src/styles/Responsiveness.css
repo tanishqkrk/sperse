@@ -1,0 +1,58 @@
+@media(max-width: 1200px) {
+    .chatSection {
+        flex: 2;
+    }
+
+    .input input {
+        width: 80%;
+    }
+}
+
+@media(max-width: 920px) {
+    .sidebar {
+        position: absolute;
+        height: 100%;
+        flex: 0;
+        transform: translateX(-100%);
+        transition: .3s;
+    }
+
+    .chatInfo {
+        flex-direction: column;
+    }
+
+    .chatImg {
+        width: 40px;
+    }
+
+    .chatIcons {
+        width: 120px;
+    }
+
+    .logo {
+        /* display: none; */
+        opacity: 0;
+    }
+
+    .showContacts {
+        display: flex;
+        background-color: var(--background-color);
+        border-radius: 50%;
+        /* padding: 10px; */
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+    }
+
+    .showContactsIcon {
+        width: 40px;
+    }
+}
+
+@media(max-width: 650px) {
+    .input input {
+        width: 70%;
+    }
+}

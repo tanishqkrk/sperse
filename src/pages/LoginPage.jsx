@@ -5,8 +5,8 @@ const LoginPage = () => {
                 <div className="logoContainer"> <img src="./logo.svg" alt="" className="logo" /> Sperse</div>
                 <h4 className="loginTitle title">Register</h4>
                 <form className='loginForm form'>
-                    <input placeholder='Email' className='loginInput input writtenInput' type="email" name="" id="" />
-                    <input placeholder='Password' className='loginInput input writtenInput' type="password" name="" id="" />
+                    <input placeholder='Email' className='loginInput  writtenInput' type="email" name="" id="" />
+                    <input placeholder='Password' className='loginInput  writtenInput' type="password" name="" id="" />
                     <button className='submit'>Login</button>
                 </form>
                 <p className='prompt'>First time? Signup</p>

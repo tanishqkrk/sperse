@@ -15,7 +15,7 @@ body {
 }
 
 * {
-  transition: .3s;
+  /* transition: .3s; */
   /* outline: 1px solid red; */
 }
 

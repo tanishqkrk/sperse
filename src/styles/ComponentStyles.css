@@ -130,6 +130,11 @@
 
 }
 
+.showContacts {
+    display: none;
+    z-index: 999;
+}
+
 .chatInfo {
     display: flex;
     align-items: center;
@@ -146,6 +151,7 @@
     display: flex;
     width: 150px;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .chatIcon-icon {
@@ -264,4 +270,8 @@
     background: var(--form-background-color);
     color: white;
     width: 100%;
+}
+
+.toggleSidebar {
+    transform: translateX(0) !important;
 }

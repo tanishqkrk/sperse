@@ -1,10 +1,15 @@
 import Navbar from './Navbar'
 import Search from './Search'
 import Chats from './Chats'
+import { useEffect, useRef } from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({ setCallbackForSiderbarRef }) => {
+    const sidebar = useRef();
+    useEffect(() => {
+        setCallbackForSiderbarRef(sidebar)
+    })
     return (
-        <div className="sidebar">
+        <div ref={sidebar} className="sidebar">
             <Navbar />
             <Search />
             <Chats />
