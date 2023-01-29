@@ -53,6 +53,12 @@
     align-items: center;
 }
 
+.userNameAndImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .userName {
     color: white;
     font-size: 16px;
@@ -64,6 +70,7 @@
 
 .userImg {
     width: 50px;
+    border-radius: 50%;
 }
 
 .logout {
@@ -105,7 +112,7 @@
     /* border-bottom: .5px solid rgba(255, 255, 255, 0.4); */
     margin: 5px 0;
     padding: 5px 0;
-    border-radius: var(--input-border-radius);
+    /* border-radius: var(--input-border-radius); */
     /* width: 95%; */
     cursor: pointer;
     /* padding: 0 10px; */
@@ -274,4 +281,5 @@
 
 .toggleSidebar {
     transform: translateX(0) !important;
+    /* width: 90%; */
 }

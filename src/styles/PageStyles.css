@@ -37,7 +37,7 @@
     margin: 15px 0;
 }
 
-.logo {
+.formLogo {
     width: 50px;
 }
 
@@ -79,10 +79,12 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
     font-size: 12px;
+    cursor: pointer;
 }
 
 .userImage {
     margin: 0 5px;
+    width: 25px;
 }
 
 .submit {
@@ -90,9 +92,28 @@
     border: none;
     padding: 10px 0;
     border-radius: var(--input-border-radius);
+    cursor: pointer;
 }
 
 .prompt {
     text-align: center;
     font-size: 12px;
+}
+
+.error-message {
+    background-color: rgba(255, 198, 198, .2);
+    text-align: center;
+    border-radius: var(--input-border-radius);
+    margin-bottom: 15px;
+    padding: 5px 0;
+    color: rgb(255, 110, 110);
+    font-weight: 600;
+    border: 2px solid rgb(255, 110, 110);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.redirect {
+    color: white;
+    text-decoration: underline;
 }

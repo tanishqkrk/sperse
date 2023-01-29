@@ -2,11 +2,10 @@ import Sidebar from '../components/Sidebar'
 import ChatSection from '../components/ChatSection'
 import '../styles/ComponentStyles.css'
 import '../styles/Responsiveness.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const HomePage = () => {
-
-    const [callbackForSiderbarRef, setCallbackForSiderbarRef] = useState(null)
+    const [callbackForSiderbarRef, setCallbackForSiderbarRef] = useState(null);
 
     return (
         <div className="homePage">

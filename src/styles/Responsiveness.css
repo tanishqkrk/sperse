@@ -1,4 +1,8 @@
 @media(max-width: 1200px) {
+    .formContainer {
+        width: 50%;
+    }
+
     .chatSection {
         flex: 2;
     }
@@ -9,11 +13,15 @@
 }
 
 @media(max-width: 920px) {
+    .formContainer {
+        width: 70%;
+    }
+
     .sidebar {
         position: absolute;
         height: 100%;
         flex: 0;
-        transform: translateX(-100%);
+        /* transform: translateX(-100%); */
         transition: .3s;
     }
 
@@ -51,10 +59,26 @@
     .showContactsIcon {
         width: 40px;
     }
+
+    .user {
+        margin: 0 40px;
+    }
 }
 
 @media(max-width: 650px) {
+    .formContainer {
+        width: 80%;
+    }
+
     .input input {
         width: 70%;
+    }
+
+    .user {
+        margin: 0 20px;
+    }
+
+    .userNameAndImg {
+        /* flex-direction: column; */
     }
 }

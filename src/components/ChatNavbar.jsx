@@ -1,7 +1,6 @@
 const ChatsNavbar = ({ callbackForSiderbarRef }) => {
 
     const toggleSidebar = (e) => {
-        console.log(e);
         e.current.classList.toggle('toggleSidebar');
         // e.current.style.transform = 'translateX(0)'
     }
