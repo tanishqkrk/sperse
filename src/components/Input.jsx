@@ -16,7 +16,8 @@ const Input = () => {
     const { currentUser } = useContext(AuthContext)
     const { data } = useContext(ChatContext)
     const handleSend = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
+        // console.log(e);
         if (img) {
             const storageRef = ref(storage, uuid());
             const uploadTask = uploadBytesResumable(storageRef, img)
@@ -70,8 +71,17 @@ const Input = () => {
         })
     }
 
+    const handleKey = (e) => {
+        if (text === "") {
+            e.preventDefault()
+        }
+        else {
+            handleSend(e)
+        }
+    }
+
     return (
-        <form onSubmit={handleSend} className="input">
+        <form onSubmit={handleKey} className="input">
             <input
                 onChange={(e) => setText(e.target.value)}
                 value={text}
