@@ -1,18 +1,24 @@
-const Message = ({ owner }) => {
+import { useContext } from "react"
+import { AuthContext } from "../context/AuthContext"
+import { ChatContext } from "../context/chatContext"
 
+const Message = ({ owner, text, profileImg, img }) => {
+    const { currentUser } = useContext(AuthContext)
+    const { data } = useContext(ChatContext)
     // let owner = 'sender'
     // let owner = 'reciever'
-
     if (owner === 'receiver') {
         return (
             <div className="message">
                 <div className="messageInfo">
-                    <img src="/user.svg" alt="" className="messageInfoChatImg" />
-                    <span className="messageInfoChatTime">Just now</span>
+                    <img src={profileImg} alt="" className="messageInfoChatImg" />
+                    {/* <span className="messageInfoChatTime">Just now</span> */}
                 </div>
                 <div className="messageContent">
-                    <p>Hey there!</p>
-                    {/* <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="" /> */}
+                    <p>{text}</p>
+                    {img &&
+                        <img src={img} alt="" />
+                    }
                 </div>
             </div>
         )
@@ -21,12 +27,14 @@ const Message = ({ owner }) => {
         return (
             <div className="message sender">
                 <div className="messageInfo senderInfo">
-                    <img src="/user.svg" alt="" className="messageInfoChatImg senderInfoChatImg" />
-                    <span className="messageInfoChatTime senderInfoChatTime">Just now</span>
+                    <img src={profileImg} alt="" className="messageInfoChatImg senderInfoChatImg" />
+                    {/* <span className="messageInfoChatTime senderInfoChatTime">Just now</span> */}
                 </div>
                 <div className="messageContent senderContent">
-                    <p>Hey there!</p>
-                    {/* <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="" /> */}
+                    <p>{text}</p>
+                    {img &&
+                        <img className="mediaImg" src={img} alt="" />
+                    }
                 </div>
             </div>
         )

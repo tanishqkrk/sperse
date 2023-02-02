@@ -1,10 +1,11 @@
-const ChatsNavbar = ({ callbackForSiderbarRef }) => {
+import { useContext } from "react";
+import { ChatContext } from "../context/chatContext";
 
+const ChatsNavbar = ({ callbackForSiderbarRef }) => {
+    const { data } = useContext(ChatContext);
     const toggleSidebar = (e) => {
         e.current.classList.toggle('toggleSidebar');
-        // e.current.style.transform = 'translateX(0)'
     }
-
     const toggleSidebarButtonFunction = () => {
         toggleSidebar(callbackForSiderbarRef)
     }
@@ -14,9 +15,9 @@ const ChatsNavbar = ({ callbackForSiderbarRef }) => {
             <div className="showContacts"><img src="/logo.svg" alt="" className="showContactsIcon" /></div>
             <div className="chatInfo">
                 <div className="chatImgContainer">
-                    <img src="/user.svg" alt="" className="chatImg" />
+                    <img src={data.user?.photoURL?.stringValue} alt="" className="chatImg" />
                 </div>
-                <div className="chatName">Himank</div>
+                <div className="chatName">{data.user?.displayName?.stringValue}</div>
             </div>
             <div className="chatIcons">
                 <div className="videoCallIcon chatIcon"><img src="/videoCallIcon.svg" alt="" className="chatIcon-icon videoCallIcon-icon" /></div>

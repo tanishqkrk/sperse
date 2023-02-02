@@ -12,7 +12,7 @@ const Sidebar = ({ setCallbackForSiderbarRef }) => {
         <div ref={sidebar} className="sidebar">
             <Navbar />
             <Search />
-            <Chats />
+            <Chats sidebar={sidebar} />
         </div>
     )
 }

@@ -5,13 +5,18 @@ body {
   padding: 0;
   background: var(--background-color);
   font-family: 'Inter', sans-serif;
-  background:
+  /* background:
     radial-gradient(farthest-side at -33.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%) 0 calc(220px/2),
     radial-gradient(farthest-side at 50% 133.33%, #0000 52%, #444725 54% 57%, #0000 59%) calc(220px/2) 0,
     radial-gradient(farthest-side at 133.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%),
     radial-gradient(farthest-side at 50% -33.33%, #0000 52%, #444725 54% 57%, #0000 59%),
     #1c1f25;
-  background-size: calc(220px/4.667) 220px, 220px calc(220px/4.667);
+  background-size: calc(220px/4.667) 220px, 220px calc(220px/4.667); */
+  background:
+    linear-gradient(135deg, #0000 18.75%, #20232b 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #20232b -6.25% 6.25%, #444725 0 18.75%);
+  background-size: 200px 200px;
+
 }
 
 * {

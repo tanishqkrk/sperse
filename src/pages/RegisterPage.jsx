@@ -6,6 +6,8 @@ import { storage } from "../firebase"
 import { db } from "../firebase"
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from 'react-router-dom';
+import Spinner from "../components/Spinner";
+import Loader from "../components/Loader";
 
 const RegisterPage = () => {
     const [err, setErr] = useState(false);
@@ -17,6 +19,10 @@ const RegisterPage = () => {
     const [uploadedImg, setUploadedImg] = useState("/user.svg");
     const navigate = useNavigate();
     // console.log(inputImg.current.src);
+
+    const removeSpace = (e) => {
+        e.code === "Space" && e.preventDefault()
+    }
 
     const updateImgInUi = () => {
         setUploadedImg("/check.svg");
@@ -34,7 +40,6 @@ const RegisterPage = () => {
             const response = await createUserWithEmailAndPassword(auth, email, password);
 
             const uniqueFileName = Date.now()
-
             const storageRef = ref(storage, `${displayName + uniqueFileName}`);
 
             await uploadBytesResumable(storageRef, file).then(
@@ -75,19 +80,19 @@ const RegisterPage = () => {
 
     return (
         <div className="page">
+            {loading && <Loader />}
             <div className="formContainer">
                 <div className="logoContainer"> <img src="./logo.svg" alt="" className="formLogo" /> Sperse</div>
                 <h4 className="registerTitle title">Register</h4>
                 <form onSubmit={handleSubmit} className='registerForm form'>
                     <input pattern="[A-Za-z0-9 ]{1,32}" placeholder='Display name (Only letter & numbers)' className='registerInput  writtenInput' type="text" name="" />
-                    <input placeholder='Email' className='registerInput writtenInput' type="email" name="" />
+                    <input onKeyDown={removeSpace} placeholder='Email' className='registerInput writtenInput' type="email" name="" />
                     <input placeholder='Password' className='registerInput  writtenInput' type="password" name="" />
                     <label className='avatarLabel' htmlFor="avatar">
                         <img ref={inputImg} className='userImage' src={uploadedImg} alt="" />
                         Add an avatar</label>
                     <input onChange={updateImgInUi} id="avatar" accept=".jpg, .jpeg, .png" className='registerInput input ' type="file" name="" />
                     {err && <span className='error-message'>{errorMsg}</span>}
-                    {loading && <span className='error-message'>Please wait</span>}
                     <button disabled={loading} className='submit'>Sign up</button>
                 </form>
                 <p className='prompt'>Have an account? <Link to="/login" className="redirect">Login</Link></p>

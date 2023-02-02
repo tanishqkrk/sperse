@@ -21,7 +21,7 @@
         position: absolute;
         height: 100%;
         flex: 0;
-        /* transform: translateX(-100%); */
+        transform: translateX(-100%);
         transition: .3s;
     }
 
@@ -30,6 +30,8 @@
     }
 
     .chatImg {
+        height: 40px;
+        object-fit: cover;
         width: 40px;
     }
 

@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react'
 
 const HomePage = () => {
     const [callbackForSiderbarRef, setCallbackForSiderbarRef] = useState(null);
-
     return (
         <div className="homePage">
             <div className="container">

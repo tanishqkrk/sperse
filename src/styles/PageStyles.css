@@ -50,6 +50,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .writtenInput {
@@ -60,6 +61,7 @@
     border-radius: var(--input-border-radius);
     padding-left: 10px;
     color: white;
+    width: 100%;
     /* border-bottom: 1px solid var(--submit-button-background); */
 }
 
@@ -93,6 +95,7 @@
     padding: 10px 0;
     border-radius: var(--input-border-radius);
     cursor: pointer;
+    width: 100%;
 }
 
 .prompt {
@@ -111,6 +114,7 @@
     border: 2px solid rgb(255, 110, 110);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    width: 100%;
 }
 
 .redirect {

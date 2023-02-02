@@ -27,7 +27,7 @@ const Navbar = () => {
                     <img src={currentUser.photoURL} alt="" className="userImg" />
                     <span className="userName">{currentUser.displayName}</span>
                 </div>
-                <button onClick={logOut} className="logout">Logout</button>
+                <button onClick={logOut} className="logout"><img src="/logout.svg" alt="" className="logoutImg" /></button>
             </div>
         </div>
     )
