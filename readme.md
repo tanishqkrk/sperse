@@ -3,6 +3,7 @@
 # Sperse
 ### Free & open-source chat application for everyone!
 
+<img src="./public/react.png" width="10"><img src="./public/js.png" width="10"><img src="./public/firebase.png" width="10"><img src="./public/vite.png" width="10">
 
 ## Getting started
 
