@@ -1,5 +1,5 @@
 
-![Logo](public/logo.svg)
+![Logo](public/logoReadme.svg)
 
 # Sperse
 ### Free & open-source chat application for everyone!
