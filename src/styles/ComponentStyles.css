@@ -99,6 +99,7 @@
     /* padding: 8px; */
     padding: 10px;
     width: 92%;
+    position: relative;
 }
 
 .searchForm input {
@@ -109,11 +110,19 @@
     /* background: var(--input-element-color); */
     border: none;
     color: white;
-    background: url(/searchIcon.svg) no-repeat scroll 8px 50%;
+    background: url(/searchIcon.svg) no-repeat scroll 90% 50%;
     background-size: 6%;
     background-color: var(--input-element-color);
     border-radius: var(--input-border-radius);
-    padding-left: 40px;
+    /* padding-left: 40px; */
+}
+
+.searchButton {
+    position: absolute;
+    right: 5%;
+    height: 50px;
+    opacity: 0;
+    width: 50px;
 }
 
 .userChat {
@@ -233,7 +242,7 @@
 
 .message {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .messageInfo {
@@ -291,7 +300,9 @@
     border-radius: var(--input-border-radius) 0px var(--input-border-radius) var(--input-border-radius);
     background: var(--form-background-color);
     color: white;
-    width: 100%;
+    width: 80%;
+    /* max-width: 50%; */
+    word-break: break-all;
 }
 
 .toggleSidebar {

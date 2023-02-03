@@ -32,7 +32,7 @@ const Search = () => {
 
     const handleKey = (e) => {
         e.code === "Enter" && handleSearch();
-        e.code === "Space" && e.preventDefault()
+        e.code === "Space" && e.preventDefault();
     }
 
     const handleSelect = async () => {
@@ -80,6 +80,7 @@ const Search = () => {
                     onChange={(e) => setUserName(e.target.value)}
                     value={userName}
                 />
+                <button onClick={handleSearch} className="searchButton"></button>
             </div>
             {
                 // loading && <Spinner />

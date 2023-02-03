@@ -76,6 +76,8 @@ const Input = () => {
             e.preventDefault()
         }
         else {
+            setImg(null)
+            setText("")
             handleSend(e)
         }
     }
