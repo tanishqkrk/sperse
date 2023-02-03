@@ -1,4 +1,4 @@
-![Logo](public/logo.png)
+<img src="https://github.com/tanishqkrk/sperse/blob/master/public/logo.svg?raw=true" width="150">
 
 # Sperse
 ### Free & open-source chat application for everyone!
