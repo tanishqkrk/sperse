@@ -15,6 +15,8 @@
     flex: 1;
     /* padding: 8px; */
     /* width: 100%; */
+    height: 100%;
+    overflow-y: scroll;
     /* padding: 0 10px; */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -23,10 +25,16 @@
     background: rgba(32, 35, 43, 0.3);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: space-between; */
 
+}
+
+.chats {
+    /* height: 80vh; */
+    /* overflow-y: scroll; */
 }
 
 .chatSection {
@@ -414,4 +422,8 @@
 .mediaImg {
     /* height: 100%; */
     border-radius: var(--input-border-radius);
+}
+
+.backArrow {
+    display: none;
 }

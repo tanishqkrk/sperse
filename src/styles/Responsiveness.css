@@ -13,6 +13,10 @@
 }
 
 @media(max-width: 920px) {
+    .backArrow {
+        display: block;
+    }
+
     .formContainer {
         width: 70%;
     }
@@ -20,6 +24,7 @@
     .sidebar {
         position: absolute;
         height: 100%;
+        width: 100%;
         flex: 0;
         transform: translateX(-100%);
         transition: .3s;

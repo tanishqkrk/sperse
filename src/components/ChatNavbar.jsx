@@ -12,7 +12,9 @@ const ChatsNavbar = ({ callbackForSiderbarRef }) => {
 
     return (
         <div onClick={toggleSidebarButtonFunction} className="chatNavbar">
-            <div className="showContacts"><img src="/logo.svg" alt="" className="showContactsIcon" /></div>
+            <div className="showContacts">
+                <img className="backArrow" src="/back.svg" alt="" />
+                <img src="/logo.svg" alt="" className="showContactsIcon" /></div>
             <div className="chatInfo">
                 <div className="chatImgContainer">
                     <img src={data.user?.photoURL?.stringValue} alt="" className="chatImg" />

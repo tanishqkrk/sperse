@@ -9,7 +9,7 @@ const Sidebar = ({ setCallbackForSiderbarRef }) => {
         setCallbackForSiderbarRef(sidebar)
     })
     return (
-        <div ref={sidebar} className="sidebar">
+        <div ref={sidebar} className="sidebar toggleSidebar">
             <Navbar />
             <Search />
             <Chats sidebar={sidebar} />

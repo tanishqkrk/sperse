@@ -85,6 +85,7 @@ const Input = () => {
     return (
         <form onSubmit={handleKey} className="input">
             <input
+                autoFocus
                 onChange={(e) => setText(e.target.value)}
                 value={text}
                 type="text"
