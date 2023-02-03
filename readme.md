@@ -1,5 +1,5 @@
 
-![Logo](/dist/logo.svg)
+![Logo](/logo.svg)
 
 # Sperse
 ### Free & open-source chat application for everyone!
