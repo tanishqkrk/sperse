@@ -243,7 +243,8 @@
     background: var(--background-color);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     /* padding: 10px 0; */
     height: 80px;
 
@@ -358,7 +359,13 @@
 
 .message {
     display: flex;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+    align-items: center;
+    padding: 0 5px;
+}
+
+.message:hover {
+    background: var(--input-element-color);
 }
 
 .messageInfo {
@@ -386,10 +393,11 @@
 
 .messageContent p {
     padding: 10px;
-    background-color: #2e2e2e;
+    /* background-color: #2e2e2e; */
+    border-left: 3px solid #8e8e8e;
     /* background: var(--form-background-color); */
     /* color: white; */
-    border-radius: 0px 8px 8px 8px;
+    /* border-radius: 0px 8px 8px 8px; */
     /* border-radius: var(--input-border-radius) 0px var(--input-border-radius) var(--input-border-radius); */
     max-width: max-content;
     margin: 10px;
@@ -402,20 +410,22 @@
 }
 
 .sender {
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
 }
 
 .senderContent {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    /* align-items: flex-end; */
 }
 
 .senderContent p {
     /* display: flex; */
     /* justify-content: end; */
-    border-radius: 8px 0 8px 8px;
-    background: var(--theme-color);
+    /* border-radius: 8px 0 8px 8px; */
+    /* background: var(--theme-color); */
+    border-left: 3px solid var(--theme-color);
+    text-align: left;
     color: white;
     width: 80%;
     /* max-width: 50%; */
