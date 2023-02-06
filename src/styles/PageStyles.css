@@ -54,7 +54,7 @@
 }
 
 .writtenInput {
-    background: var(--background-color);
+    background: var(--input-element-color);
     border: none;
     margin: 5px 0;
     height: 40px;

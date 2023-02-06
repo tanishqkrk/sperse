@@ -16,6 +16,7 @@ function App() {
   }
   return (
     <BrowserRouter>
+      <div className="alert">This app is still in beta! Expect to see bugs here and there!</div>
       <Routes>
         <Route path="/">
           <Route index element={

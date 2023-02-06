@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,26 +16,26 @@ body {
     radial-gradient(farthest-side at 50% -33.33%, #0000 52%, #444725 54% 57%, #0000 59%),
     #1c1f25;
   background-size: calc(220px/4.667) 220px, 220px calc(220px/4.667); */
-  background:
-    linear-gradient(135deg, #0000 18.75%, #20232b 0 31.25%, #0000 0),
-    repeating-linear-gradient(45deg, #20232b -6.25% 6.25%, #444725 0 18.75%);
-  background-size: 200px 200px;
+  /* background:linear-gradient(135deg, #0000 18.75%, #20232b 0 31.25%, #0000 0),repeating-linear-gradient(45deg, #20232b -6.25% 6.25%, #444725 0 18.75%); */
+  /* background-size: 200px 200px; */
+
 
 }
 
 * {
-  /* transition: .3s; */
+  transition: .3s;
   /* outline: 1px solid red; */
 }
 
 :root {
-  --background-color: #20232B;
+  --background-color: #161616;
   /* --background-color: #222831; */
   --form-background-color: #5852D6;
   --form-interior-padding: 1em;
   --border-radius: 12px;
   --input-border-radius: 6px;
-  --input-element-color: #1A1A1A;
+  --input-element-color: #242424;
   /* --input-element-color: #20232B; */
-  --theme-color: #F3FC8A;
+  /* --theme-color: #F3FC8A; */
+  --theme-color: #2077FF;
 }

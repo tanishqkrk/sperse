@@ -22,9 +22,9 @@ const ChatsNavbar = ({ callbackForSiderbarRef }) => {
                 <div className="chatName">{data.user?.displayName?.stringValue}</div>
             </div>
             <div className="chatIcons">
-                <div className="videoCallIcon chatIcon"><img src="/videoCallIcon.svg" alt="" className="chatIcon-icon videoCallIcon-icon" /></div>
-                <div className="addFriendIcon chatIcon"><img src="/addFriendIcon.svg" alt="" className="chatIcon-icon addFriendIcon-icon" /></div>
-                <div className="moreIcon chatIcon"><img src="/moreIcon.svg" alt="" className="chatIcon-icon moreIcon-icon" /></div>
+                {/* <div className="videoCallIcon chatIcon"><img src="/videoCallIcon.svg" alt="" className="chatIcon-icon videoCallIcon-icon" /></div> */}
+                {/* <div className="addFriendIcon chatIcon"><img src="/addFriendIcon.svg" alt="" className="chatIcon-icon addFriendIcon-icon" /></div> */}
+                {/* <div className="moreIcon chatIcon"><img src="/moreIcon.svg" alt="" className="chatIcon-icon moreIcon-icon" /></div> */}
             </div>
         </div>
     )

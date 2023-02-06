@@ -89,7 +89,7 @@ const Search = () => {
                 err && <span style={{ width: "80%", display: "block" }} className="error-message">{errorMsg}</span>
             }
             {
-                user && <div onClick={handleSelect} style={{ background: "#5852D6" }} className="userChat">
+                user && <div onClick={handleSelect} style={{ background: "var(--theme-color)", width: '100%' }} className="userChat">
                     <div className="userImgContainer"><img src={user.photoURL} alt="" className="userImg" /></div>
                     <div className="userName">{user.displayName}</div>
                 </div>

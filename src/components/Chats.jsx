@@ -1,6 +1,6 @@
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase"
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext, useRef } from "react"
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/chatContext";
 import Loader from "./Loader"
@@ -8,11 +8,12 @@ import { getStorage, ref, getMetadata } from "firebase/storage";
 
 const Chats = ({ sidebar }) => {
     const [chats, setChats] = useState([]);
-    const [loading, setLoading] = useState(false)
-    const { currentUser } = useContext(AuthContext)
+    const [loading, setLoading] = useState(false);
+    const { currentUser } = useContext(AuthContext);
     const { dispatch } = useContext(ChatContext);
-    const [checkedUserImg, setCheckedUserImg] = useState("/user.svg")
-    // console.log(Object.entries(chats)[0]);
+    const [currentChat, setCurrentChat] = useState('');
+    const currentChatRef = useRef([]);
+    // const { data } = useContext(ChatContext)
     useEffect(() => {
         const getChats = () => {
             setLoading(true)
@@ -28,59 +29,74 @@ const Chats = ({ sidebar }) => {
         }
     }, [currentUser.uid])
 
-    // console.log(Object.entries(chats)[0][1].mapValue.fields.userInfo.mapValue.fields.photoURL);
-
-    const checkImg = (e) => {
-        console.log(e);
-        try {
-            const storage = getStorage();
-            const currentUserImg = ref(storage, e[1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue);
-            getMetadata(currentUserImg)
-                .then((metadata) => {
-                    if (metadata.contentType.includes("image/jpeg") || metadata.contentType.includes("image/png") || metadata.contentType.includes("image/jpg")) {
-                        setCheckedUserImg(e[1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue)
-                        // return e[1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue
-                    }
-                    else {
-                        // return "/user.svg"
-                        setCheckedUserImg("/user.svg")
-                        // checkUserImg = "/user.svg";
-                        // return checkUserImg
-                    }
-                })
-        }
-        catch (error) {
-            // !
-        }
-    }
-    // checkImg(Object.entries(chats)[0][1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue)
     const handleSelect = (e) => {
         sidebar.current.classList.remove("toggleSidebar")
         dispatch({ type: "CHANGE_USER", payload: e });
+        let clickedCurrentChat = e.uid.stringValue
+        setCurrentChat(() => clickedCurrentChat);
     }
 
+    // TODO: Develop functionality to highlight the current chat in chats menu.
+    // TODO: Set default img to user.svg for the users who have not used an avatar.
+
+    // console.log(currentChatRef);
     useEffect(() => {
-        // checkImg()
-    }, [])
-    // console.log(Object.entries(chats)[0][1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue);
-    // console.log(Object.entries(chats)[0][1]);
+        // console.log(currentChat);
+        if (currentChat) {
+            if (currentChatRef.current.classList.contains(currentChat)) {
+                if (currentChatRef.current.classList[1] === currentChat) {
+                    currentChatRef.current.classList.add("currentUserChat")
+                }
+            }
+        }
+    }, [currentChat])
+
+    const createArrayForCurrentUsers = (element) => {
+        // currentChatRef.current.push(element)
+    }
+
     return (
         <div className="chats">
+            {
+                Object.entries(chats)
+                    .sort(
+                        (a, b) => b[1].mapValue.fields?.time?.integerValue - a[1].mapValue.fields?.time?.integerValue
+                    )
+                    .map(
+                        (chat) => {
+                            const storage = getStorage();
+                            let currentUserImg = ref(storage, chat[1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue);
+                            let getData = getMetadata(currentUserImg)
+                                .then((metadata) => {
+                                    if (metadata.contentType.includes("jpeg") || metadata.contentType.includes("png") || metadata.contentType.includes("jpg")) {
+                                        return true
+                                    }
+                                    else {
+                                        // checkBoolImg = false
+                                        return false
+                                    }
+                                })
+                            let checkImg = () => {
+                                getData.then((data) => {
+                                    // console.log(data);
+                                })
+                            }
+                            // checkImg()
+                            // checkImg() ? console.log('1') : console.log('2')
+                            // chat[1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue
+                            return (
+                                <div onClick={() => handleSelect(chat[1].mapValue.fields.userInfo.mapValue.fields)} key={chat[1].mapValue.fields.userInfo.mapValue.fields.uid.stringValue} ref={currentChatRef} className={`userChat ${currentChat}`}>
+                                    <div className="userImgContainer"><img src={checkImg() ? "/react.png" : "/user.svg"} alt="" className="userImg" /></div>
+                                    <div className="userChatText">
+                                        <div className="userName">{chat[1].mapValue.fields.userInfo.mapValue.fields.displayName.stringValue}</div>
+                                        <p className="lastMessage">{chat[1].mapValue.fields?.lastMessage?.mapValue?.fields?.text?.stringValue}</p>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    )
 
-            {Object.entries(chats).sort((a, b) => b[1].mapValue.fields?.time?.integerValue - a[1].mapValue.fields?.time?.integerValue).map((chat) => {
-                // checkImg(chat)
-                // console.log(chat[1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue);
-                // console.log(checkImg(chat));
-                return (
-                    <div onClick={() => handleSelect(chat[1].mapValue.fields.userInfo.mapValue.fields)} key={chat[1].mapValue.fields.userInfo.mapValue.fields.uid.stringValue} className={`userChat ${chat[1].mapValue.fields.userInfo.mapValue.fields.uid.stringValue}`}>
-                        <div className="userImgContainer"><img src={checkedUserImg} alt="" className="userImg" /></div>
-                        <div className="userChatText">
-                            <div className="userName">{chat[1].mapValue.fields.userInfo.mapValue.fields.displayName.stringValue}</div>
-                            <p className="lastMessage">{chat[1].mapValue.fields?.lastMessage?.mapValue?.fields?.text?.stringValue}</p>
-                        </div>
-                    </div>
-                )
-            })}
+            }
         </div>
     )
 }

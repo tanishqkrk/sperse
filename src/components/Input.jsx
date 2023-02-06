@@ -83,7 +83,7 @@ const Input = () => {
     }
 
     return (
-        <form onSubmit={handleKey} className="input">
+        <div className="input">
             <input
                 autoFocus
                 onChange={(e) => setText(e.target.value)}
@@ -94,8 +94,8 @@ const Input = () => {
                 placeholder="Type a message" />
             <label htmlFor="file"> <img src="/attachmentIcon.svg" alt="" className="attachmentIcon" /></label>
             <input accept=".jpg, .jpeg, .png" onChange={(e) => setImg(e.target.files[0])} type="file" name="" id="file" />
-            <button className="sendBtn" type="submit"><img src="/sendIcon.svg" alt="" className="sendBtnIcon" /></button>
-        </form>
+            <button onClick={handleKey} className="sendBtn" type="submit"><img src="/sendIcon.svg" alt="" className="sendBtnIcon" /></button>
+        </div>
     )
 }
 

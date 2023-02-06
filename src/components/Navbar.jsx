@@ -23,7 +23,7 @@ const Navbar = () => {
             const storage = getStorage();
             const currentUserImg = ref(storage, currentUser.photoURL);
             getMetadata(currentUserImg)
-                .then((metadata) => {                // console.log(metadata.contentType.includes("image/jpeg"));
+                .then((metadata) => {
                     if (metadata.contentType.includes("image/jpeg") || metadata.contentType.includes("image/png") || metadata.contentType.includes("image/jpg")) {
                         setCheckedUserImg(currentUser.photoURL)
                     }
