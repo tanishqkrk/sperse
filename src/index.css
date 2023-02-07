@@ -9,8 +9,7 @@ body {
   padding: 0;
   background: var(--background-color);
   font-family: 'Inter', sans-serif;
-  background: url(/bg.jpg);
-  background-position: 50%;
+  background: url("/bg.jpg");
   /* background:
     radial-gradient(farthest-side at -33.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%) 0 calc(220px/2),
     radial-gradient(farthest-side at 50% 133.33%, #0000 52%, #444725 54% 57%, #0000 59%) calc(220px/2) 0,
@@ -32,12 +31,12 @@ body {
 :root {
   --background-color: #161616;
   /* --background-color: #222831; */
-  --form-background-color: #5852D6;
+  /* --form-background-color: #00ee9f; */
   --form-interior-padding: 1em;
   --border-radius: 12px;
   --input-border-radius: 6px;
   --input-element-color: #242424;
   /* --input-element-color: #20232B; */
   /* --theme-color: #F3FC8A; */
-  --theme-color: #2077FF;
+  --theme-color: #002fff;
 }

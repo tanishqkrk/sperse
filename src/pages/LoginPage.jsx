@@ -38,7 +38,7 @@ const LoginPage = () => {
         <div className="page">
             {loading && <Loader />}
             <div className="formContainer">
-                <div className="logoContainer"> <img src="./logo.svg" alt="" className="formLogo" /> Sperse</div>
+                <div className="PageLogoContainer"> <img src="./logo.svg" alt="" className="formLogo" /> Sperse</div>
                 <h4 className="loginTitle title">Login</h4>
                 <form onSubmit={handleSubmit} className='loginForm form'>
                     <input onKeyDown={removeSpace} placeholder='Email' className='loginInput  writtenInput' type="email" name="" />

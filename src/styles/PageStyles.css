@@ -1,3 +1,9 @@
+body {
+    /* background-position: 50% !important; */
+    /* background-size: 100% !important; */
+    /* background-repeat: no-repeat !important; */
+}
+
 .page {
     height: 100vh;
     display: flex;
@@ -23,12 +29,12 @@
     width: 30%;
     border-radius: var(--border-radius);
     border: 5px solid var(--theme-color);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(3px); */
+    /* -webkit-backdrop-filter: blur(5px); */
     /* min-width: 90%; */
 }
 
-.logoContainer {
+.PageLogoContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;

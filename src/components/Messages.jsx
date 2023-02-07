@@ -8,6 +8,8 @@ import { getStorage, ref, getMetadata } from "firebase/storage";
 
 
 const Messages = () => {
+
+    const notificationSound = new Audio("/notification.mp3");
     const [checkedUserImg, setCheckedUserImg] = useState("/user.svg");
     const [checkedChatImg, setCheckedChatImg] = useState("/user.svg");
     const [chatMessages, setChatMessages] = useState([]);
@@ -61,8 +63,6 @@ const Messages = () => {
                     }
                     else {
                         setCheckedChatImg("/user.svg")
-                        // checkUserImg = "/user.svg";
-                        // return checkUserImg
                     }
                 })
         }
@@ -74,6 +74,10 @@ const Messages = () => {
         checkUserImg();
         checkChatImg();
     }, [data])
+
+    useEffect(() => {
+        notificationSound.play()
+    }, [chatMessages])
 
     return (
         <div ref={messages} className="messages">

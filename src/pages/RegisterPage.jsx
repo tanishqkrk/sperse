@@ -82,7 +82,7 @@ const RegisterPage = () => {
         <div className="page">
             {loading && <Loader />}
             <div className="formContainer">
-                <div className="logoContainer"> <img src="./logo.svg" alt="" className="formLogo" /> Sperse</div>
+                <div className="PageLogoContainer"> <img src="./logo.svg" alt="" className="formLogo" /> Sperse</div>
                 <h4 className="registerTitle title">Register</h4>
                 <form onSubmit={handleSubmit} className='registerForm form'>
                     <input pattern="[A-Za-z0-9 ]{1,32}" placeholder='Display name (Only letter & numbers)' className='registerInput  writtenInput' type="text" name="" />

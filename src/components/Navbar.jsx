@@ -48,7 +48,7 @@ const Navbar = () => {
     // console.log(currentUser);
     return (
         <div className="navbar">
-            <div className="logoContainer"><img src="./logo.svg" alt="" className="logo" /></div>
+            <div className="logoContainer"><img src="./logo.svg" alt="" className="logo" /><div className="betaText">BETA</div></div>
             <div className="user">
                 <div className="userNameAndImg">
                     <img src={checkedUserImg} alt="" className="userImg" />

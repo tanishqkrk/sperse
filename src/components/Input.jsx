@@ -81,10 +81,13 @@ const Input = () => {
             handleSend(e)
         }
     }
-
+    const handleKeyFromInput = (e) => {
+        e.code === "Enter" && handleKey(e)
+    }
     return (
         <div className="input">
             <input
+                onKeyDown={handleKeyFromInput}
                 autoFocus
                 onChange={(e) => setText(e.target.value)}
                 value={text}
