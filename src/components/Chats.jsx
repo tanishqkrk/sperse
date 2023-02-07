@@ -30,7 +30,7 @@ const Chats = ({ sidebar }) => {
     }, [currentUser.uid])
 
     const handleSelect = (e) => {
-        sidebar.current.classList.remove("toggleSidebar")
+        // sidebar.current.classList.remove("toggleSidebar")
         dispatch({ type: "CHANGE_USER", payload: e });
         let clickedCurrentChat = e.uid.stringValue
         setCurrentChat(() => clickedCurrentChat);

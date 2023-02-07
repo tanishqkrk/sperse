@@ -4,8 +4,12 @@ import { ChatContext } from "../context/chatContext";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
+import { getStorage, ref, getMetadata } from "firebase/storage";
+
 
 const Messages = () => {
+    const [checkedUserImg, setCheckedUserImg] = useState("/user.svg");
+    const [checkedChatImg, setCheckedChatImg] = useState("/user.svg");
     const [chatMessages, setChatMessages] = useState([]);
     const { currentUser } = useContext(AuthContext)
     const { data } = useContext(ChatContext);
@@ -25,12 +29,58 @@ const Messages = () => {
     // console.log(currentUser.metadata.createdAt);
     // console.log(chatMessages);
     // console.log(chatMessages[33].img);
+
+    const checkUserImg = (e) => {
+        try {
+            const storage = getStorage();
+            const currentUserImg = ref(storage, currentUser.photoURL);
+            getMetadata(currentUserImg)
+                .then((metadata) => {
+                    if (metadata.contentType.includes("image/jpeg") || metadata.contentType.includes("image/png") || metadata.contentType.includes("image/jpg")) {
+                        setCheckedUserImg(currentUser.photoURL)
+                    }
+                    else {
+                        setCheckedUserImg("/user.svg")
+                        // checkUserImg = "/user.svg";
+                        // return checkUserImg
+                    }
+                })
+        }
+        catch (error) {
+            // !
+        }
+    }
+    const checkChatImg = (e) => {
+        try {
+            const storage = getStorage();
+            const currentUserImg = ref(storage, data.user.photoURL.stringValue);
+            getMetadata(currentUserImg)
+                .then((metadata) => {
+                    if (metadata.contentType.includes("image/jpeg") || metadata.contentType.includes("image/png") || metadata.contentType.includes("image/jpg")) {
+                        setCheckedChatImg(data.user.photoURL.stringValue)
+                    }
+                    else {
+                        setCheckedChatImg("/user.svg")
+                        // checkUserImg = "/user.svg";
+                        // return checkUserImg
+                    }
+                })
+        }
+        catch (error) {
+            // !
+        }
+    }
+    useEffect(() => {
+        checkUserImg();
+        checkChatImg();
+    }, [data])
+
     return (
         <div ref={messages} className="messages">
             {
                 chatMessages.map((message) => {
                     let owner = message.senderId === currentUser.uid ? "sender" : "receiver"
-                    let imgOwner = message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL.stringValue
+                    let imgOwner = message.senderId === currentUser.uid ? checkedUserImg : checkedChatImg;
                     return <Message img={message.img} key={message.id} profileImg={imgOwner} text={message.text} owner={owner} />
                 })
             }
