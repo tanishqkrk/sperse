@@ -1,26 +1,22 @@
-import { useEffect, useRef, useState, useContext } from "react"
+import { useEffect, useState, useContext } from "react"
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
 const GlobalMessages = () => {
 
-    const { currentUser } = useContext(AuthContext)
+    const { currentUser } = useContext(AuthContext);
 
     const [isLoaded, setIsLoaded] = useState(false)
     const [globalChatMessages, setGlobalChatMessages] = useState([])
-    // console.log(globalChatMessages);
     useEffect(() => {
         const unsub = onSnapshot(doc(db, "globalChat", "messages"), (doc) => {
             setGlobalChatMessages(doc.data())
             setIsLoaded(true)
 
         });
-
         return () => unsub();
 
     }, [])
-    // console.log(globalChatMessages);
-
 
 
     return (
@@ -30,7 +26,7 @@ const GlobalMessages = () => {
                     return (
                         <div className="message">
                             <div className="messageInfo">
-                                <img src={message.photoURL} alt="" className="messageInfoChatImg" />
+                                <img src={"/user.svg"} alt="" className="messageInfoChatImg" />
                             </div>
                             <div className="messageContent">
                                 <p className={`${message.uid === currentUser.uid && "globalSender"}`}><h6 className="globalChatName">{message.displayName}</h6>{message.message}</p>

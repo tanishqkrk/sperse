@@ -33,13 +33,11 @@ body {
 
 :root {
   --background-color: #161616;
-  /* --background-color: #222831; */
-  /* --form-background-color: #00ee9f; */
+  --light-background-color: #e6e6e6;
   --form-interior-padding: 1em;
   --border-radius: 12px;
   --input-border-radius: 6px;
   --input-element-color: #242424;
-  /* --input-element-color: #20232B; */
-  /* --theme-color: #F3FC8A; */
+  --light-input-element-color: #e4e4e4;
   --theme-color: #002fff;
 }
