@@ -9,7 +9,10 @@ body {
   padding: 0;
   background: var(--background-color);
   font-family: 'Inter', sans-serif;
-  background: url("/bg.jpg");
+  /* background: url("/bg.jpg"); */
+  background-image: radial-gradient(#242424 1.5px, transparent 1.5px);
+  background-size: 29px 29px;
+  background-color: #161616;
   /* background:
     radial-gradient(farthest-side at -33.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%) 0 calc(220px/2),
     radial-gradient(farthest-side at 50% 133.33%, #0000 52%, #444725 54% 57%, #0000 59%) calc(220px/2) 0,
@@ -24,7 +27,7 @@ body {
 }
 
 * {
-  transition: .3s;
+  /* transition: .3s; */
   /* outline: 1px solid red; */
 }
 

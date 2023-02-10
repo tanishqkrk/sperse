@@ -13,6 +13,19 @@
 }
 
 @media(max-width: 920px) {
+    .alert {
+        display: block;
+    }
+
+    .globalChat {
+        display: none;
+    }
+
+    .betaText {
+        display: none;
+        /* font-size: .5em; */
+    }
+
     html {
         overflow: inherit;
     }

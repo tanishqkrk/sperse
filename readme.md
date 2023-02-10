@@ -41,6 +41,7 @@ After registration the user will be taken to home page.
 
 ## Upcoming features
 
+- Global Chat
 - Light/dark mode toggle
 - Share files other than images
 - Change Username/Password/Avatar

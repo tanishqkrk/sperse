@@ -1,0 +1,10 @@
+Todos:
+
+!!! New feature !!!
+Global chat. 🌍
+
+1. Develop functionality to highlight the current chat in chats menu. !!!
+2. Set default img to user.svg for the users who have not used an avatar. !!
+3. Fix background image !
+4. Fig out sounds !
+5. Last message for both users !!!

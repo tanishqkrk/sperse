@@ -8,7 +8,6 @@ import { getStorage, ref, getMetadata } from "firebase/storage";
 
 
 const Messages = () => {
-
     const notificationSound = new Audio("/notification.mp3");
     const [checkedUserImg, setCheckedUserImg] = useState("/user.svg");
     const [checkedChatImg, setCheckedChatImg] = useState("/user.svg");
@@ -23,6 +22,7 @@ const Messages = () => {
     useEffect(() => {
         const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
             doc.exists() && setChatMessages(doc.data().messages)
+            // console.log(doc.data().messages);
         })
         return () => {
             unSub();

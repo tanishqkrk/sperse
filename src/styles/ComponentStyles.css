@@ -22,6 +22,7 @@ body {
     border-radius: 12px;
     opacity: 0;
     outline: 1px solid white;
+    display: none;
 }
 
 .logoContainer {
@@ -30,6 +31,7 @@ body {
 }
 
 .betaText {
+    height: fit-content;
     padding: 5px;
     border-radius: 3px;
     border: 2px solid lime;
@@ -128,7 +130,7 @@ body {
 }
 
 .chatSection {
-    flex: 3;
+    flex: 2;
     /* background:
         radial-gradient(farthest-side at -33.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%) 0 calc(220px/2),
         radial-gradient(farthest-side at 50% 133.33%, #0000 52%, #444725 54% 57%, #0000 59%) calc(220px/2) 0,
@@ -211,7 +213,7 @@ body {
     border: none;
     color: white;
     background: url(/searchIcon.svg) no-repeat scroll 90% 50%;
-    background-size: 6%;
+    background-size: 25px;
     background-color: var(--input-element-color);
     border-radius: var(--input-border-radius);
     padding-left: 15px;
@@ -319,7 +321,7 @@ body {
 }
 
 .input input {
-    width: 90%;
+    width: 80%;
     height: 30px;
     background-color: var(--input-element-color);
     border-radius: var(--input-border-radius);
@@ -393,6 +395,7 @@ body {
 }
 
 .message:hover {
+    border-radius: 10px;
     background: var(--input-element-color);
 }
 
@@ -430,6 +433,8 @@ body {
     max-width: max-content;
     margin: 10px;
     color: white;
+    width: fit-content;
+
 }
 
 .messageContent img {
@@ -455,7 +460,8 @@ body {
     border-left: 2px solid var(--theme-color);
     text-align: left;
     color: white;
-    width: 80%;
+    /* width: 80%; */
+    width: fit-content;
     /* max-width: 50%; */
     word-break: break-all;
 }
@@ -578,4 +584,102 @@ body {
 
 .backArrow {
     display: none;
+}
+
+.globalChat {
+    flex: 1;
+    outline: 1px solid rgba(255, 255, 255, .3);
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.globalChatIcon {
+    margin: 10px 0;
+}
+
+.globalInput {
+    height: 60px;
+    background: var(--background-color);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    outline: 1px solid rgba(255, 255, 255, .3);
+    width: 100%;
+}
+
+.globalInput input {
+    width: 70%;
+    height: 30px;
+    background-color: var(--input-element-color);
+    border-radius: var(--input-border-radius);
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 17px;
+}
+
+.globalSendBtn {
+    background: var(--theme-color);
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    /* display: none; */
+}
+
+.globalChatMessages {
+    color: white;
+    height: calc(100% - 160px);
+    width: 100%;
+    overflow-y: scroll;
+    /* padding: 0 10px; */
+    outline: 1px solid rgba(255, 255, 255, .3);
+}
+
+.globalChatMessages {
+    scrollbar-width: auto;
+    scrollbar-color: white transparent;
+}
+
+/* Chrome, Edge, and Safari */
+.globalChatMessages::-webkit-scrollbar {
+    width: 3px;
+}
+
+.globalChatMessages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.globalChatMessages::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid transparent;
+}
+
+.globalChatName {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.globalSender {
+    border-left: 3px solid var(--theme-color) !important;
 }
