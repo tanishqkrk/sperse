@@ -96,7 +96,7 @@ body {
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: space-between; */
-    outline: 1px solid rgba(255, 255, 255, .3);
+    outline: 1px solid var(--secondary-font-color);
 
 }
 
@@ -148,7 +148,7 @@ body {
     padding: 0 8px;
     background: var(--background-color);
     height: 80px;
-    outline: 1px solid rgba(255, 255, 255, .3);
+    outline: 1px solid var(--secondary-font-color);
 
 }
 
@@ -165,7 +165,7 @@ body {
 }
 
 .userName {
-    color: white;
+    color: var(--font-color);
     font-size: 16px;
 }
 
@@ -287,7 +287,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: var(--font-color);
 }
 
 .chatImg {
@@ -318,7 +318,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    outline: 1px solid rgba(255, 255, 255, .3);
+    outline: 1px solid var(--secondary-font-color);
 }
 
 .input input {
@@ -363,7 +363,7 @@ body {
     height: calc(100% - 160px);
     overflow-y: scroll;
     padding: 0 10px;
-    outline: 1px solid rgba(255, 255, 255, .3);
+    outline: 1px solid var(--secondary-font-color);
     /* width: 90%; */
 }
 
@@ -432,7 +432,9 @@ body {
     /* border-radius: var(--input-border-radius) 0px var(--input-border-radius) var(--input-border-radius); */
     max-width: max-content;
     margin: 10px;
-    color: white;
+    /* color: white; */
+    color: var(--font-color);
+
     width: fit-content;
 
 }
@@ -453,13 +455,15 @@ body {
 }
 
 .senderContent p {
+    color: var(--font-color);
+
     /* display: flex; */
     /* justify-content: end; */
     /* border-radius: 8px 0 8px 8px; */
     /* background: var(--theme-color); */
     border-left: 2px solid var(--theme-color);
     text-align: left;
-    color: white;
+
     /* width: 80%; */
     width: fit-content;
     /* max-width: 50%; */
@@ -567,7 +571,7 @@ body {
 }
 
 .lastMessage {
-    color: darkgrey;
+    color: var(--secondary-font-color);
     margin: 5px 0;
     font-size: 0.8em;
     overflow: hidden;
@@ -588,7 +592,7 @@ body {
 
 .globalChat {
     flex: 1;
-    outline: 1px solid rgba(255, 255, 255, .3);
+    outline: 1px solid var(--secondary-font-color);
     color: white;
     height: 100%;
     width: 100%;
@@ -610,7 +614,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    outline: 1px solid rgba(255, 255, 255, .3);
+    outline: 1px solid var(--secondary-font-color);
     width: 100%;
 }
 
@@ -652,7 +656,7 @@ body {
     width: 100%;
     overflow-y: scroll;
     /* padding: 0 10px; */
-    outline: 1px solid rgba(255, 255, 255, .3);
+    outline: 1px solid var(--secondary-font-color);
 }
 
 .globalChatMessages {
@@ -680,8 +684,13 @@ body {
     padding: 0;
     font-size: .7em;
     font-weight: 800;
+    color: var(--secondary-font-color);
 }
 
 .globalSender {
     border-left: 3px solid var(--theme-color) !important;
+}
+
+.userSvg {
+    fill: var(--font-color);
 }

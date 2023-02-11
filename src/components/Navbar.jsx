@@ -10,13 +10,17 @@ const Navbar = () => {
     const navigate = useNavigate();
     const { currentUser } = useContext(AuthContext);
     const [checkedUserImg, setCheckedUserImg] = useState("/user.svg")
-    // const [loading, setLoading] = useState(false)
+    const [lightTheme, setLightTheme] = useState(false)
 
     const logOut = () => {
         signOut(auth);
         navigate("/login")
     }
 
+    const switchTheme = () => {
+        document.body.classList.toggle("light");
+        setLightTheme(!lightTheme)
+    }
 
     const checkImg = (e) => {
         try {
@@ -29,8 +33,6 @@ const Navbar = () => {
                     }
                     else {
                         setCheckedUserImg("/user.svg")
-                        // checkUserImg = "/user.svg";
-                        // return checkUserImg
                     }
                 })
         }
@@ -41,18 +43,15 @@ const Navbar = () => {
     useEffect(() => {
         checkImg()
     }, [])
-    // checkImg();
 
-
-    // checkImg()
-    // console.log(currentUser);
     return (
         <div className="navbar">
             <div className="logoContainer"><img src="./logo.svg" alt="" className="logo" /><div className="betaText">BETA</div></div>
             <div className="user">
                 <div className="userNameAndImg">
+                    <img onClick={switchTheme} src={!lightTheme ? "/sun.svg" : "moon.svg"} alt="" className="themeSwitcher" />
                     <img src={checkedUserImg} alt="" className="userImg" />
-                    <span className="userName">{currentUser.displayName}</span>
+                    {/* <span className="userName">{currentUser.displayName}</span> */}
                 </div>
                 <button onClick={logOut} className="logout"><img src="/logout.svg" alt="" className="logoutImg" /></button>
             </div>

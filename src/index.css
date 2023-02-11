@@ -10,9 +10,9 @@ body {
   background: var(--background-color);
   font-family: 'Inter', sans-serif;
   /* background: url("/bg.jpg"); */
-  background-image: radial-gradient(#242424 1.5px, transparent 1.5px);
+  background-image: radial-gradient(var(--input-element-color) 1.5px, transparent 1.5px);
   background-size: 29px 29px;
-  background-color: #161616;
+  background-color: var(--background-color);
   /* background:
     radial-gradient(farthest-side at -33.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%) 0 calc(220px/2),
     radial-gradient(farthest-side at 50% 133.33%, #0000 52%, #444725 54% 57%, #0000 59%) calc(220px/2) 0,
@@ -22,22 +22,31 @@ body {
   background-size: calc(220px/4.667) 220px, 220px calc(220px/4.667); */
   /* background:linear-gradient(135deg, #0000 18.75%, #20232b 0 31.25%, #0000 0),repeating-linear-gradient(45deg, #20232b -6.25% 6.25%, #444725 0 18.75%); */
   /* background-size: 200px 200px; */
-
+  color: var(--font-color);
 
 }
 
 * {
-  /* transition: .3s; */
+  transition: .1s;
   /* outline: 1px solid red; */
 }
 
 :root {
   --background-color: #161616;
-  --light-background-color: #e6e6e6;
+  --light-background-color: #ffffff;
   --form-interior-padding: 1em;
   --border-radius: 12px;
   --input-border-radius: 6px;
   --input-element-color: #242424;
   --light-input-element-color: #e4e4e4;
   --theme-color: #002fff;
+  --font-color: #fff;
+  --secondary-font-color: darkgrey;
+}
+
+.light {
+  --background-color: #f6f6f6;
+  --input-element-color: #e4e4e4;
+  --font-color: #000;
+  --secondary-font-color: rgb(81, 81, 81);
 }

@@ -8,6 +8,7 @@ const GlobalMessages = () => {
 
     const [isLoaded, setIsLoaded] = useState(false)
     const [globalChatMessages, setGlobalChatMessages] = useState([])
+
     useEffect(() => {
         const unsub = onSnapshot(doc(db, "globalChat", "messages"), (doc) => {
             setGlobalChatMessages(doc.data())
