@@ -6,11 +6,11 @@ import { ChatContext } from '../context/chatContext'
 import { useContext } from 'react'
 
 
-const ChatSection = ({ callbackForSiderbarRef }) => {
+const ChatSection = ({ callbackForSiderbarRef, callbackForGlobalRef }) => {
     const { data } = useContext(ChatContext);
     return (
         <div className="chatSection">
-            <ChatNavbar callbackForSiderbarRef={callbackForSiderbarRef} />
+            <ChatNavbar callbackForSiderbarRef={callbackForSiderbarRef} callbackForGlobalRef={callbackForGlobalRef} />
             <Messages />
             <Input />
         </div>

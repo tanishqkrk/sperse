@@ -12,6 +12,7 @@ const Navbar = () => {
     const [checkedUserImg, setCheckedUserImg] = useState("/user.svg")
     const [lightTheme, setLightTheme] = useState(false)
 
+
     const logOut = () => {
         signOut(auth);
         navigate("/login")
@@ -47,6 +48,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="logoContainer"><img src="./logo.svg" alt="" className="logo" /><div className="betaText">BETA</div></div>
+            <div onClick={""} className="globalChatTrigger"><img src="/globe.svg" alt="" className="globalChatTriggerImg" /></div>
             <div className="user">
                 <div className="userNameAndImg">
                     <img onClick={switchTheme} src={!lightTheme ? "/sun.svg" : "moon.svg"} alt="" className="themeSwitcher" />

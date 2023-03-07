@@ -1,5 +1,8 @@
 Todos:
 
+Active bugs:
+    1. Add global chat as a sidepannel
+
 !!! New feature !!!
 Global chat. 🌍
 

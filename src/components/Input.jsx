@@ -72,6 +72,8 @@ const Input = () => {
     }
 
     const handleKey = (e) => {
+        setImg(null)
+        setText("")
         if (text === "") {
             e.preventDefault()
         }

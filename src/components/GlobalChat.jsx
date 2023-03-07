@@ -3,12 +3,18 @@ import { doc, setDoc } from "firebase/firestore";
 import { AuthContext } from "../context/AuthContext";
 import { db } from "../firebase"
 import GlobalMessages from "./GlobalChatMessages"
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { v4 as uuid } from "uuid"
 
-const GlobalChat = () => {
+const GlobalChat = ({ setCallbackForGlobalRef }) => {
     const [message, setMessage] = useState("")
     const { currentUser } = useContext(AuthContext);
+    const globalChatRef = useRef();
+
+    useEffect(() => {
+        setCallbackForGlobalRef(globalChatRef);
+    })
+
     const createGlobalChat = async (e) => {
         if (message !== "") {
             try {
@@ -39,7 +45,7 @@ const GlobalChat = () => {
     }
 
     return (
-        <div className="globalChat">
+        <div ref={globalChatRef} className="globalChat">
             <div className="placeholder">
                 <div className="globalChatIcon"><img src="/globe.svg" alt="" className="globalChatIconImg" /></div>
             </div>

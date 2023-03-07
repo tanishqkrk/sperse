@@ -18,7 +18,30 @@
     }
 
     .globalChat {
-        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        flex: 0;
+        transform: translateX(-100%);
+        transition: .3s;
+        /* display: none; */
+    }
+
+    .globalChatTrigger {
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .globalChatTriggerImg {
+        width: 40px;
+        height: 40px;
     }
 
     .betaText {
@@ -67,7 +90,9 @@
 
     .logo {
         /* display: none; */
-        opacity: 0;
+        /* opacity: 0; */
+        /* background-color: red; */
+        /* width: 1000px; */
     }
 
     .showContacts {
@@ -76,6 +101,7 @@
         /* background-color: black; */
         border-radius: 50%;
         /* padding: 10px; */
+        z-index: 9999;
         width: 50px;
         height: 50px;
         justify-content: center;

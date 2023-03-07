@@ -45,7 +45,7 @@ const Chats = ({ sidebar }) => {
         if (currentChat) {
             if (currentChatRef.current.classList.contains(currentChat)) {
                 if (currentChatRef.current.classList[1] === currentChat) {
-                    currentChatRef.current.classList.add("currentUserChat")
+                    // currentChatRef.current.classList.add("currentUserChat")
                 }
             }
         }

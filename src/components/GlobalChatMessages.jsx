@@ -1,11 +1,11 @@
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useState, useContext, useRef } from "react"
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
 const GlobalMessages = () => {
 
     const { currentUser } = useContext(AuthContext);
-
+    const globaChat = useRef();
     const [isLoaded, setIsLoaded] = useState(false)
     const [globalChatMessages, setGlobalChatMessages] = useState([])
 
@@ -16,12 +16,14 @@ const GlobalMessages = () => {
 
         });
         return () => unsub();
-
     }, [])
 
+    useEffect(() => {
+        globaChat.current.scrollTo(0, globaChat.current.scrollHeight)
+    }, [globalChatMessages])
 
     return (
-        <div className="globalChatMessages">
+        <div ref={globaChat} className="globalChatMessages">
             {
                 isLoaded && globalChatMessages.messages.map((message) => {
                     return (
