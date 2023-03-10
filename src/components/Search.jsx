@@ -16,10 +16,15 @@ const Search = () => {
 
 
     const handleSearch = async () => {
-        const q = query(collection(db, "users"), where("email", "==", userName));
+        const q = query(collection(db, "users"), where("displayName", "==", userName));
+        const qEmail = query(collection(db, "users"), where("email", "==", userName));
         try {
             const querySnapshot = await getDocs(q);
+            const querySnapshotEmail = await getDocs(qEmail);
             querySnapshot.forEach((doc) => {
+                setUser(doc.data())
+            });
+            querySnapshotEmail.forEach((doc) => {
                 setUser(doc.data())
             });
             // setLoading(true)
@@ -32,7 +37,8 @@ const Search = () => {
 
     const handleKey = (e) => {
         e.code === "Enter" && handleSearch();
-        e.code === "Space" && e.preventDefault();
+        handleSearch();
+        // e.code === "Space" && e.preventDefault();
     }
 
     const handleSelect = async () => {
@@ -67,8 +73,12 @@ const Search = () => {
         }
         setUser(null);
         setUserName("")
-
     }
+
+    const handleInputChange = (e) => {
+        setUserName(e.target.value);
+    }
+
     return (
         <div className="search">
             <div className="searchForm">
@@ -77,7 +87,7 @@ const Search = () => {
                     type="text"
                     placeholder="Find a user"
                     onKeyDown={handleKey}
-                    onChange={(e) => setUserName(e.target.value)}
+                    onChange={handleInputChange}
                     value={userName}
                 />
                 <button onClick={handleSearch} className="searchButton"></button>

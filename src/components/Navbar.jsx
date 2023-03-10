@@ -1,17 +1,16 @@
 import { signOut } from "firebase/auth"
 import { auth } from "../firebase"
 import { AuthContext } from "../context/AuthContext"
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { getStorage, ref, getMetadata } from "firebase/storage";
 import { useState } from "react"
-
 const Navbar = () => {
     const navigate = useNavigate();
     const { currentUser } = useContext(AuthContext);
     const [checkedUserImg, setCheckedUserImg] = useState("/user.svg")
     const [lightTheme, setLightTheme] = useState(false)
-
+    const logoContainer = useRef();
 
     const logOut = () => {
         signOut(auth);
@@ -23,7 +22,9 @@ const Navbar = () => {
         setLightTheme(!lightTheme)
     }
 
-    const checkImg = (e) => {
+    // const checkImg = (e) => {
+    // }
+    useEffect(() => {
         try {
             const storage = getStorage();
             const currentUserImg = ref(storage, currentUser.photoURL);
@@ -38,16 +39,16 @@ const Navbar = () => {
                 })
         }
         catch (error) {
-            // !
+            console.log(error);
         }
-    }
-    useEffect(() => {
-        checkImg()
+        // checkImg();
     }, [])
+
+
 
     return (
         <div className="navbar">
-            <div className="logoContainer"><img src="./logo.svg" alt="" className="logo" /><div className="betaText">BETA</div></div>
+            <div ref={logoContainer} className="logoContainer"><img src="./logo.svg" alt="" className="logo" /><div className="betaText">BETA</div></div>
             <div onClick={""} className="globalChatTrigger"><img src="/globe.svg" alt="" className="globalChatTriggerImg" /></div>
             <div className="user">
                 <div className="userNameAndImg">

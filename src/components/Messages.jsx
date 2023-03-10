@@ -15,6 +15,7 @@ const Messages = () => {
     const { currentUser } = useContext(AuthContext)
     const { data } = useContext(ChatContext);
     const messages = useRef();
+
     useEffect(() => {
         messages.current.scrollTo(0, messages.current.scrollHeight)
     }, [chatMessages])
@@ -67,17 +68,18 @@ const Messages = () => {
                 })
         }
         catch (error) {
-            // !
+            console.log(error);
         }
     }
     useEffect(() => {
         checkUserImg();
-        checkChatImg();
     }, [data])
 
     useEffect(() => {
-        notificationSound.play()
-    }, [chatMessages])
+        if (chatMessages.length > 0) {
+            notificationSound.play()
+        }
+    }, [chatMessages.length])
 
     return (
         <div ref={messages} className="messages">

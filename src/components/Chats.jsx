@@ -36,9 +36,6 @@ const Chats = ({ sidebar }) => {
         setCurrentChat(() => clickedCurrentChat);
     }
 
-    // TODO: Develop functionality to highlight the current chat in chats menu.
-    // TODO: Set default img to user.svg for the users who have not used an avatar.
-
     // console.log(currentChatRef);
     useEffect(() => {
         // console.log(currentChat);
@@ -50,10 +47,6 @@ const Chats = ({ sidebar }) => {
             }
         }
     }, [currentChat])
-
-    const createArrayForCurrentUsers = (element) => {
-        // currentChatRef.current.push(element)
-    }
 
     return (
         <div className="chats">
@@ -81,6 +74,7 @@ const Chats = ({ sidebar }) => {
                                     // console.log(data);
                                 })
                             }
+                            // console.log(chat[1].mapValue.fields?.lastMessage?.mapValue?.fields?.text?.stringValue);
                             // checkImg()
                             // checkImg() ? console.log('1') : console.log('2')
                             // chat[1].mapValue.fields.userInfo.mapValue.fields.photoURL.stringValue

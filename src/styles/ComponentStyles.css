@@ -26,6 +26,8 @@ body {
 }
 
 .logoContainer {
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
 }
@@ -131,6 +133,7 @@ body {
 
 .chatSection {
     flex: 2;
+    /* height: 100vh; */
     /* background:
         radial-gradient(farthest-side at -33.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%) 0 calc(220px/2),
         radial-gradient(farthest-side at 50% 133.33%, #0000 52%, #444725 54% 57%, #0000 59%) calc(220px/2) 0,
@@ -238,6 +241,10 @@ body {
     background-color: var(--input-element-color);
     border-radius: var(--input-border-radius);
     padding-left: 15px;
+}
+
+.searchForm input:focus-visible {
+    outline: none;
 }
 
 .searchButton {
@@ -353,7 +360,9 @@ body {
     font-size: 17px;
 }
 
-
+.input input:focus-visible {
+    outline: none;
+}
 
 #file {
     display: none;

@@ -97,6 +97,7 @@ body {
 
 .submit {
     background: var(--theme-color);
+    color: white;
     border: none;
     padding: 10px 0;
     border-radius: var(--input-border-radius);
