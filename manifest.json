@@ -1,7 +1,7 @@
 {
     "name": "Sperse",
     "short_name": "Sperse",
-    "start_url": "/",
+    "start_url": "/?home=true",
     "icons": [
         {
             "src": "public/logo.png",
