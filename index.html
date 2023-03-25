@@ -7,11 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sperse</title>
   <script src="https://kit.fontawesome.com/cffed4b148.js" crossorigin="anonymous"></script>
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  </script>
 </body>
 
 </html>
