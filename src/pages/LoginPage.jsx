@@ -1,4 +1,3 @@
-import '../styles/PageStyles.css'
 import { auth } from '../firebase';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
@@ -38,7 +37,7 @@ const LoginPage = () => {
         <div className="page">
             {loading && <Loader />}
             <div className="formContainer">
-                <div className="PageLogoContainer"> <img src="./logo.svg" alt="" className="formLogo" /> Sperse</div>
+                <div className="PageLogoContainer"> <img src="./logo.png" alt="" className="formLogo" /> Sperse</div>
                 <h4 className="loginTitle title">Login</h4>
                 <form onSubmit={handleSubmit} className='loginForm form'>
                     <input onKeyDown={removeSpace} placeholder='Email' className='loginInput  writtenInput' type="email" name="" />

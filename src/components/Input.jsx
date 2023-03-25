@@ -90,7 +90,7 @@ const Input = () => {
         <div className="input">
             <input
                 onKeyDown={handleKeyFromInput}
-                autoFocus
+                // autoFocus
                 onChange={(e) => setText(e.target.value)}
                 value={text}
                 type="text"

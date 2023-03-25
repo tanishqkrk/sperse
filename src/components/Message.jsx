@@ -11,7 +11,7 @@ const Message = ({ owner, text, profileImg, img }) => {
         return (
             <div className="message">
                 <div className="messageInfo">
-                    <img src={profileImg} alt="" className="messageInfoChatImg" />
+                    {/* <img src={profileImg} alt="" className="messageInfoChatImg" /> */}
                     {/* <span className="messageInfoChatTime">Just now</span> */}
                 </div>
                 <div className="messageContent">
@@ -27,7 +27,7 @@ const Message = ({ owner, text, profileImg, img }) => {
         return (
             <div className="message sender">
                 <div className="messageInfo senderInfo">
-                    <img src={profileImg} alt="" className="messageInfoChatImg senderInfoChatImg" />
+                    {/* <img src={profileImg} alt="" className="messageInfoChatImg senderInfoChatImg" /> */}
                     {/* <span className="messageInfoChatTime senderInfoChatTime">Just now</span> */}
                 </div>
                 <div className="messageContent senderContent">

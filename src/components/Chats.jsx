@@ -14,26 +14,26 @@ const Chats = ({ sidebar }) => {
     const [currentChat, setCurrentChat] = useState('');
     const currentChatRef = useRef([]);
     // const { data } = useContext(ChatContext)
-    useEffect(() => {
-        const getChats = () => {
-            setLoading(true)
-            const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
-                doc?._document?.data?.value?.mapValue?.fields !== undefined ? setChats(doc?._document?.data?.value?.mapValue?.fields) : setChats([])
-            });
-            return () => {
-                unsub();
-            }
+    const getChats = () => {
+        setLoading(true)
+        const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
+            doc?._document?.data?.value?.mapValue?.fields !== undefined ? setChats(doc?._document?.data?.value?.mapValue?.fields) : setChats([])
+        });
+        return () => {
+            unsub();
         }
+    }
+    useEffect(() => {
         if (currentUser.uid && !loading) {
             getChats();
         }
     }, [currentUser.uid])
 
     const handleSelect = (e) => {
-        sidebar.current.classList.remove("toggleSidebar")
         dispatch({ type: "CHANGE_USER", payload: e });
         let clickedCurrentChat = e.uid.stringValue
         setCurrentChat(() => clickedCurrentChat);
+        sidebar.current.classList.remove("toggleSidebar")
     }
 
     // console.log(currentChatRef);

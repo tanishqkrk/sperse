@@ -8,6 +8,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from 'react-router-dom';
 import Spinner from "../components/Spinner";
 import Loader from "../components/Loader";
+// import { signInWithGoogle } from "../firebase";
 
 const RegisterPage = () => {
     const [err, setErr] = useState(false);
@@ -82,7 +83,7 @@ const RegisterPage = () => {
         <div className="page">
             {loading && <Loader />}
             <div className="formContainer">
-                <div className="PageLogoContainer"> <img src="./logo.svg" alt="" className="formLogo" /> Sperse</div>
+                <div className="PageLogoContainer"> <img src="./logo.png" alt="" className="formLogo" /> Sperse</div>
                 <h4 className="registerTitle title">Register</h4>
                 <form onSubmit={handleSubmit} className='registerForm form'>
                     <input pattern="[A-Za-z0-9 ]{1,32}" placeholder='Display name (Only letter & numbers)' className='registerInput  writtenInput' type="text" name="" />
@@ -93,7 +94,8 @@ const RegisterPage = () => {
                         Add an avatar</label>
                     <input onChange={updateImgInUi} id="avatar" accept=".jpg, .jpeg, .png" className='registerInput input ' type="file" name="" />
                     {err && <span className='error-message'>{errorMsg}</span>}
-                    <button disabled={loading} className='submit'>Sign up</button>
+                    <button type="submit" disabled={loading} className='submit'>Sign up</button>
+                    {/* <button onClick={signInWithGoogle} type="button" className="signInWithGoogle">Sign in with Google</button> */}
                 </form>
                 <p className='prompt'>Have an account? <Link to="/login" className="redirect">Login</Link></p>
             </div>

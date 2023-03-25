@@ -13,7 +13,6 @@ const GlobalMessages = () => {
         const unsub = onSnapshot(doc(db, "globalChat", "messages"), (doc) => {
             setGlobalChatMessages(doc.data())
             setIsLoaded(true)
-
         });
         return () => unsub();
     }, [])

@@ -48,11 +48,11 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <div ref={logoContainer} className="logoContainer"><img src="./logo.svg" alt="" className="logo" /><div className="betaText">BETA</div></div>
-            <div onClick={""} className="globalChatTrigger"><img src="/globe.svg" alt="" className="globalChatTriggerImg" /></div>
+            <div ref={logoContainer} className="logoContainer"><img src="./logo.png" alt="" className="logo" /><div className="betaText">BETA</div></div>
+            {/* <div onClick={""} className="globalChatTrigger"><img src="/globe.svg" alt="" className="globalChatTriggerImg" /></div> */}
             <div className="user">
                 <div className="userNameAndImg">
-                    <img onClick={switchTheme} src={!lightTheme ? "/sun.svg" : "moon.svg"} alt="" className="themeSwitcher" />
+                    {/* <img onClick={switchTheme} src={!lightTheme ? "/sun.svg" : "moon.svg"} alt="" className="themeSwitcher" /> */}
                     <img src={checkedUserImg} alt="" className="userImg" />
                     {/* <span className="userName">{currentUser.displayName}</span> */}
                 </div>

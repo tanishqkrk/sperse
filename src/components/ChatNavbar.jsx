@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { ChatContext } from "../context/chatContext";
 import { getStorage, ref, getMetadata } from "firebase/storage";
 
-const ChatsNavbar = ({ callbackForSiderbarRef, callbackForGlobalRef }) => {
+const ChatsNavbar = ({ callbackForSiderbarRef }) => {
     const [checkedUserImg, setCheckedUserImg] = useState("/user.svg");
     const { data } = useContext(ChatContext);
     const toggleSidebar = (e) => {
@@ -35,14 +35,16 @@ const ChatsNavbar = ({ callbackForSiderbarRef, callbackForGlobalRef }) => {
         <div className="chatNavbar">
             <div onClick={() => toggleSidebar(callbackForSiderbarRef)} className="showContacts">
                 <img className="backArrow" src="/back.svg" alt="" />
-                <img src="/logo.svg" alt="" className="showContactsIcon" /></div>
+                {/* <img src="/logo.png" alt="" className="showContactsIcon" /> */}
+            </div>
             <div className="chatInfo">
                 <div className="chatImgContainer">
                     <img src={checkedUserImg} alt="" className="chatImg" />
                 </div>
                 <div className="chatName">{data.user?.displayName?.stringValue}</div>
             </div>
-            <div onClick={() => toggleSidebar(callbackForGlobalRef)} className="globalChatTrigger"><img src="/globe.svg" alt="" className="globalChatTriggerImg" /></div>
+            {/* <div></div> */}
+            {/* <div onClick={() => toggleSidebar(callbackForGlobalRef)} className="globalChatTrigger"><img src="/globe.svg" alt="" className="globalChatTriggerImg" /></div> */}
         </div>
     )
 }

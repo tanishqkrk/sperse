@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 html {
   overflow-x: hidden;
@@ -8,11 +8,11 @@ body {
   margin: 0;
   padding: 0;
   background: var(--background-color);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   /* background: url("/bg.jpg"); */
-  background-image: radial-gradient(var(--input-element-color) 1.5px, transparent 1.5px);
-  background-size: 29px 29px;
-  background-color: var(--background-color);
+  /* background-image: radial-gradient(var(--input-element-color) 1.5px, transparent 1.5px); */
+  /* background-size: 29px 29px; */
+  /* background-color: var(--background-color); */
   /* background:
     radial-gradient(farthest-side at -33.33% 50%, #0000 52%, #444725 54% 57%, #0000 59%) 0 calc(220px/2),
     radial-gradient(farthest-side at 50% 133.33%, #0000 52%, #444725 54% 57%, #0000 59%) calc(220px/2) 0,
@@ -33,13 +33,13 @@ body {
 
 :root {
   --background-color: #161616;
-  --light-background-color: #ffffff;
+  /* --light-background-color: #161616; */
   --form-interior-padding: 1em;
   --border-radius: 12px;
   --input-border-radius: 6px;
   --input-element-color: #242424;
   --light-input-element-color: #e4e4e4;
-  --theme-color: #002fff;
+  --theme-color: #4f70ff;
   --font-color: #fff;
   --secondary-font-color: darkgrey;
 }
